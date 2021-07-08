@@ -21,8 +21,9 @@ public class LinkLists {
             ListNode thirdNode = new ListNode(30);
             lists.head.next = secondNode;
             secondNode.next = thirdNode;
-            System.out.println("before roving first node in data.");
+//            System.out.println("before removing first node in data.");
             lists.print();
+            lists.sortedLinkList(lists);
 //            lists.pop(secondNode, lists);
             lists.print();
             search(lists, 30);
@@ -39,6 +40,28 @@ public class LinkLists {
             }
             System.out.println("node is found with data 30 :: "+currentNode.data);
         }
+
+    }
+
+    private void sortedLinkList(LinkLists lists) {
+        ListNode currentNode = head;
+        int temp;
+        ListNode index;
+        while (currentNode != null){
+            index = currentNode.next;
+            while (index != null){
+                if (currentNode.data > index.data){
+                    temp = currentNode.data;
+                    currentNode.data = index.data;
+                    index.data = temp;
+
+                }
+                index = index.next;
+
+            }
+            currentNode = currentNode.next;
+        }
+
 
     }
 
