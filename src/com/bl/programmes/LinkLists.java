@@ -26,13 +26,11 @@ public class LinkLists {
 //            lists.pop(secondNode, lists);
             lists.print();
             search(lists, 30);
+            lists.insert(40,30);
+            lists.print();
         }
         private static void search(LinkLists lists ,int data) {
             ListNode currentNode = lists.head , previousNode = null;
-//
-//            if (currentNode != null && currentNode.data == data){
-//                System.out.println(data);
-//            }
             while ( currentNode != null && currentNode.data != data){
 
                 currentNode = currentNode.next;
@@ -41,6 +39,15 @@ public class LinkLists {
         }
 
     }
+
+    private void insert(int whatToInsert, int afterWhatToInsert) {
+        ListNode currentNode = head;
+        while (currentNode !=null && currentNode.data != afterWhatToInsert ){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = new ListNode(40);
+    }
+
     private void pop(ListNode node, LinkLists lists) {
         ListNode courser = head;
         System.out.println("after removing head node from link list.");
