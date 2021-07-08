@@ -29,10 +29,7 @@ public class LinkLists {
         }
         private static void search(LinkLists lists ,int data) {
             ListNode currentNode = lists.head , previousNode = null;
-//
-//            if (currentNode != null && currentNode.data == data){
-//                System.out.println(data);
-//            }
+
             while ( currentNode != null && currentNode.data != data){
 
                 currentNode = currentNode.next;
