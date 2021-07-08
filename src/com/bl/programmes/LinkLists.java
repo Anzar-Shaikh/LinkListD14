@@ -14,10 +14,8 @@ public class LinkLists {
         public static void main(String[] args) {
             LinkLists lists = new LinkLists();
             lists.head = new ListNode("50");
-            ListNode secondNode = new ListNode(30);
-            ListNode thirdNode = new ListNode(70);
-            lists.head.next = secondNode;
-            secondNode.next = thirdNode;
+            lists.head.next = new ListNode(30);
+            lists.head.next.next = new ListNode(70);
             lists.print();
 
         }
