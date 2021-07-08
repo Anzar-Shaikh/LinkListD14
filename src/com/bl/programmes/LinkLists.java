@@ -28,6 +28,8 @@ public class LinkLists {
             search(lists, 30);
             lists.insert(40,30);
             lists.print();
+            lists.delete(40);
+            lists.print();
         }
         private static void search(LinkLists lists ,int data) {
             ListNode currentNode = lists.head , previousNode = null;
@@ -38,6 +40,19 @@ public class LinkLists {
             System.out.println("node is found with data 30 :: "+currentNode.data);
         }
 
+    }
+
+    private void delete(int whatToDelete) {
+        ListNode currentNode = head, previousNode = null;
+        while (currentNode != null && currentNode.data != whatToDelete){
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+
+        }
+        if (currentNode != null){
+            System.out.println( whatToDelete+" node deleted successfully..... ");
+            previousNode.next = currentNode.next;
+        }
     }
 
     private void insert(int whatToInsert, int afterWhatToInsert) {
