@@ -16,12 +16,20 @@ public class LinkLists {
 
             lists.head = new ListNode(50);
             ListNode secondNode = new ListNode(70);
-            lists.head.next = secondNode;
             ListNode thirdNode = new ListNode(30);
-            lists.head.next = thirdNode;
-            thirdNode.next = secondNode;
+            lists.head.next = secondNode;
+            secondNode.next = thirdNode;
+            System.out.println("before roving first node in data.");
             lists.print();
+            lists.pop(secondNode, lists);
+            lists.print();
+
         }
+    }
+
+    private void pop(ListNode node, LinkLists lists) {
+        System.out.println("after removing head node from link list.");
+        lists.head = node;
     }
 
     private void print() {
